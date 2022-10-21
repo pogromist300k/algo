@@ -1,10 +1,15 @@
-for i in range(1, 16):
-    out = i
-    if i % 3 == 0:
-        if i % 5 == 0:
-            out = 'FizzBuzz'
-        else:
-            out = 'Fizz'
-    elif i % 5 == 0:
-        out = 'Buzz'
-    print(out, end=' ' if i < 15 else '')
+l = 1
+r = 100
+count = 0
+x = int(input(f'Введите число для поиска от {l} до {r}: '))
+while l < r:
+    count += 1
+    m = (l + r) // 2
+    # print(f'шаг {count}\n[{l}  {m}  {r}]')
+    if x == m:
+        break
+    if x > m:
+        l = m + 1
+    else:
+        r = m - 1
+print('Шагов потребовалось:', count)
